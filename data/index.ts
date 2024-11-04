@@ -1,5 +1,13 @@
 import { iBook } from "@/lib/types";
 
+export const book_genres = [
+  "Fantasy",
+  "Science Fiction",
+  "Mystery",
+  "Romance",
+  "Historical Fiction",
+];
+
 export const book_data: iBook[] = [
   {
     id: 1,
