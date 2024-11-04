@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export default function RatingReview() {
   return (
     <section className="flex-1">
-      <Tabs defaultValue="rating" className="h-full space-y-4">
+      <Tabs defaultValue="reviews" className="h-full space-y-4">
         <TabsList>
           <TabsTrigger value="rating">Rating</TabsTrigger>
           <TabsTrigger value="reviews">Reviews</TabsTrigger>
@@ -16,15 +16,14 @@ export default function RatingReview() {
           <Rating />
         </TabsContent>
 
-        <ScrollArea className="h-[550px] pr-6">
-          <TabsContent value="reviews" className="space-y-6">
+        <TabsContent value="reviews" className="space-y-6">
+          <ScrollArea className="h-[calc(100svh-12rem)] pr-6">
             {[...Array(8)].map((_, i) => (
               <Review key={i} />
             ))}
-          </TabsContent>
-
-          <ScrollBar />
-        </ScrollArea>
+            <ScrollBar />
+          </ScrollArea>
+        </TabsContent>
       </Tabs>
     </section>
   );

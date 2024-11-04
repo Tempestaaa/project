@@ -1,6 +1,6 @@
 import BookDetails from "@/app/(public)/books/[slug]/_components/book-details";
+import ImageSection from "@/app/(public)/books/[slug]/_components/image-section";
 import RatingReview from "@/app/(public)/books/[slug]/_components/rating-review";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { book_data } from "@/data";
 import Image from "next/image";
 
@@ -14,15 +14,7 @@ export default async function BookPage({ params }: Props) {
 
   return (
     <article className="flex flex-col md:flex-row gap-8 px-4 h-full">
-      <section className="w-full md:w-1/5 relative min-h-[350px] grid place-items-center md:block">
-        <Image
-          src={book.image}
-          alt="book image"
-          width={300}
-          height={1}
-          className="user-drag-none"
-        />
-      </section>
+      <ImageSection image={book.image} price={book.price} />
 
       <div className="flex flex-col lg:flex-row gap-8 flex-1 font-paragraph">
         <BookDetails book={book} />
