@@ -4,6 +4,7 @@ export interface iNavLinks {
 }
 
 export interface iBook {
+  id: number;
   title: string;
   author: string;
   desc: string;

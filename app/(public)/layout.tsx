@@ -8,7 +8,7 @@ export default function PublicLayout({
   return (
     <div className="container flex flex-col h-full">
       <Navbar />
-      <div className="py-14 flex-1">{children}</div>
+      <div className="py-16 flex-1">{children}</div>
     </div>
   );
 }

@@ -1,3 +1,5 @@
-export default function BooksPage() {
-  return <div>BooksPage</div>;
+interface Props {}
+
+export default function BooksPage({}: Props) {
+  return <article></article>;
 }

@@ -10,7 +10,7 @@ export default async function HomePage({ searchParams }: Props) {
   const query = (await searchParams).query;
 
   return (
-    <div className="h-full">
+    <article className="h-full">
       <section className="justify-center items-center flex flex-col p-8 min-h-[360px] gap-6">
         <div className="text-center space-y-1">
           <h1 className="text-6xl font-black font-heading uppercase">
@@ -24,6 +24,6 @@ export default async function HomePage({ searchParams }: Props) {
 
       <Separator className="mb-12 bg-foreground w-1/2 mx-auto" />
       <BookList />
-    </div>
+    </article>
   );
 }
