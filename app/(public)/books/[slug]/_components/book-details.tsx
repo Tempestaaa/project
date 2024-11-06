@@ -33,7 +33,7 @@ export default function BookDetails({ book }: Props) {
 
       <div className="space-y-2 mt-4">
         <Header title="Description" />
-        <p className="text-base text-foreground/60">{book.desc}</p>
+        <p className="text-base text-foreground/60 line-clamp-5">{book.desc}</p>
         <Button>More</Button>
       </div>
 

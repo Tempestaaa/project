@@ -16,7 +16,7 @@ export default function RatingReview() {
           <Rating />
         </TabsContent>
 
-        <TabsContent value="reviews" className="space-y-6">
+        <TabsContent value="reviews">
           <ScrollArea className="h-[calc(100svh-12rem)] pr-6">
             {[...Array(8)].map((_, i) => (
               <Review key={i} />

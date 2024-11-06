@@ -3,7 +3,7 @@ import { StarIcon } from "lucide-react";
 
 export default function Review() {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 my-6">
       <Avatar>
         <AvatarImage src="/user-profile.jpg" alt="user's avatar" />
         <AvatarFallback>TT</AvatarFallback>
