@@ -14,12 +14,16 @@ export default function BookCard({ book }: Props) {
     <Card className="border-none">
       <CardTitle className="relative h-[260px] group">
         <Link href={`/books/${book.id}`}>
-          <Image
-            src={book.image}
-            alt="book"
-            fill
-            className="object-contain py-4"
-          />
+          <div className="relative h-full w-full">
+            <Image
+              src={book.image}
+              alt="book"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-contain py-4 absolute"
+            />
+          </div>
         </Link>
 
         <div className="absolute top-4 right-1 flex flex-col gap-3 *:shadow-sm *:shadow-foreground opacity-0 group-hover:opacity-100 duration-300">

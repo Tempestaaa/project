@@ -1,15 +1,22 @@
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+"use client";
+
 import { book_data, book_genres } from "@/data";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function HeaderFilter() {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const { replace } = useRouter();
+
+  const handleFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const genre = e.target.value.toLowerCase();
+    const query = new URLSearchParams(searchParams);
+    if (genre) query.set("genre", genre);
+    else query.delete("genre");
+
+    replace(`${pathname}?${query.toString()}`);
+  };
+
   return (
     <section className="space-y-4 mt-8">
       <h1 className="font-heading text-3xl font-extrabold text-center">
@@ -20,25 +27,21 @@ export default function HeaderFilter() {
           {book_data.length} <span className="text-foreground/60">items</span>
         </h5>
 
-        <Select>
-          <SelectTrigger className="min-w-40 w-fit">
-            <SelectValue placeholder="Select a genre" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Genres</SelectLabel>
-              {book_genres.map((item) => (
-                <SelectItem
-                  key={item}
-                  value={item}
-                  className="capitalize hover:!bg-foreground hover:!text-background duration-300"
-                >
-                  {item}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+        <select
+          onChange={handleFilter}
+          className="h-10 bg-background text-foreground border border-foreground w-fit min-w-40 px-2"
+        >
+          <option disabled>Select a genre</option>
+          {book_genres.map((item) => (
+            <option
+              key={item}
+              value={item}
+              className="capitalize hover:!bg-foreground hover:!text-background duration-300"
+            >
+              {item}
+            </option>
+          ))}
+        </select>
       </div>
     </section>
   );
