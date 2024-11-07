@@ -1,4 +1,4 @@
-import { iBook } from "@/lib/types";
+import { iBook, iUser } from "@/lib/types";
 
 export const book_genres = [
   "Fantasy",
@@ -53,5 +53,78 @@ export const book_data: iBook[] = [
     image: "/book-5.jpg",
     price: 3.74,
     rating: 4.25,
+  },
+];
+
+export const book_comments: iUser[] = [
+  {
+    id: 1,
+    username: "Bookworm123",
+    review: "A fantastic read! Couldn't put it down.",
+    rating: 5,
+    createdAt: "2023-11-07T12:34:56Z",
+  },
+  {
+    id: 2,
+    username: "NightOwlReader",
+    review: "A bit slow at the start, but picked up pace later on.",
+    rating: 4,
+    createdAt: "2023-11-06T10:23:45Z",
+  },
+  {
+    id: 3,
+    username: "PageTurnerPro",
+    review: "The plot twists were unexpected and thrilling!",
+    rating: 5,
+    createdAt: "2023-11-08T15:22:33Z",
+  },
+  {
+    id: 4,
+    username: "CoffeeAndNovels",
+    review: "The characters were well-developed and relatable.",
+    rating: 4,
+    createdAt: "2023-11-09T09:11:22Z",
+  },
+  {
+    id: 5,
+    username: "BookLover4Ever",
+    review: "A bit too predictable, but still an enjoyable read.",
+    rating: 3,
+    createdAt: "2023-11-10T18:00:00Z",
+  },
+  {
+    id: 6,
+    username: "BibliophileBabe",
+    review: "A captivating story with a surprising ending.",
+    rating: 5,
+    createdAt: "2023-11-07T08:45:12Z",
+  },
+  {
+    id: 7,
+    username: "BookwormBuddy",
+    review: "A bit too long-winded, but the writing style is beautiful.",
+    rating: 4,
+    createdAt: "2023-11-09T13:33:33Z",
+  },
+  {
+    id: 8,
+    username: "LiteraryLion",
+    review: "A thought-provoking exploration of human nature.",
+    rating: 5,
+    createdAt: "2023-11-08T17:44:44Z",
+  },
+  {
+    id: 9,
+    username: "NovelNovice",
+    review: "A great book for beginners to the genre.",
+    rating: 4,
+    createdAt: "2023-11-10T11:55:55Z",
+  },
+  {
+    id: 10,
+    username: "BookwormBeliever",
+    review: "A truly unforgettable reading experience.",
+    rating: 5,
+    createdAt: "2023-11-07T16:23:14Z",
   },
 ];

@@ -12,3 +12,11 @@ export interface iBook {
   rating: number;
   price: number;
 }
+
+export interface iUser {
+  id: number;
+  username: string;
+  review: string;
+  createdAt: string;
+  rating: number;
+}

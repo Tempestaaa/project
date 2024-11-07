@@ -5,9 +5,9 @@ interface Props {
 
 export default function InformationRow({ title, value }: Props) {
   return (
-    <div className="flex items-center">
+    <div className="flex">
       <p className="w-1/4 font-heading font-bold">{title}</p>
-      <p className="flex-1 text-foreground/60">{value}</p>
+      <p className="flex-1 text-foreground/60 font-paragraph">{value}</p>
     </div>
   );
 }

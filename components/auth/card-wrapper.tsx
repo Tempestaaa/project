@@ -30,7 +30,7 @@ export default function CardWrapper({
   isShowSocials = false,
 }: Props) {
   return (
-    <Card className="w-[400px] border border-foreground space-y-6 shadow-lg shadow-foreground">
+    <Card className="w-[400px] border border-foreground space-y-6 shadow-lg shadow-foreground rounded-none">
       <CardHeader className="text-center">
         <CardTitle className="font-heading font-extrabold text-4xl uppercase">
           {title}

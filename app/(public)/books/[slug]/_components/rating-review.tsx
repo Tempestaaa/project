@@ -2,6 +2,7 @@ import Rating from "@/app/(public)/books/[slug]/_components/rating";
 import Review from "@/app/(public)/books/[slug]/_components/review";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { book_comments } from "@/data";
 
 export default function RatingReview() {
   return (
@@ -18,8 +19,8 @@ export default function RatingReview() {
 
         <TabsContent value="reviews">
           <ScrollArea className="h-[calc(100svh-12rem)] pr-6">
-            {[...Array(8)].map((_, i) => (
-              <Review key={i} />
+            {book_comments.map((item) => (
+              <Review key={item.id} user={item} />
             ))}
             <ScrollBar />
           </ScrollArea>

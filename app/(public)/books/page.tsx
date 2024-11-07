@@ -2,9 +2,13 @@ import HeaderFilter from "@/app/(public)/books/_components/header-filter";
 import BookCard from "@/components/public/home/book-card";
 import { book_data } from "@/data";
 
-interface Props {}
+interface Props {
+  searchParams: Promise<{ genre?: string }>;
+}
 
-export default function BooksPage({}: Props) {
+export default async function BooksPage({ searchParams }: Props) {
+  const genre = (await searchParams).genre;
+
   return (
     <article className="space-y-8">
       <HeaderFilter />
